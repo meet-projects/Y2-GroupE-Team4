@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share Your Story | Isha l'Isha Haifa Feminist Center</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f8f8f8;
+    }
+
+    header {
+      background-color: #6a1b9a;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+    }
+
+    h1 {
+      color: #6a1b9a;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    .story-form {
+      margin-bottom: 20px;
+    }
+
+    .story-form label,
+    .story-form textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .story-form textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .comment-form {
+      margin-bottom: 20px;
+    }
+
+    .comment-form label,
+    .comment-form textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .comment-form textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .button {
+      background-color: #6a1b9a;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #4a148c;
+    }
+
+    .comment-section {
+      margin-top: 40px;
+    }
+
+    .comment {
+      background-color: #f8f8f8;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Isha l'Isha Haifa Feminist Center</h1>
+  </header>
+
+  <div class="container">
+    <h2>Share Your Story</h2>
+    <form class="story-form">
+      <label for="story-title">Story Title:</label>
+      <input type="text" id="story-title" required>
+
+      <label for="story-content">Your Story:</label>
+      <textarea id="story-content" required></textarea>
+
+      <button type="submit" class="button">Submit Story</button>
+    </form>
+
+    <h2>Comment on Stories</h2>
+    <form class="comment-form">
+      <label for="comment-name">Your Name:</label>
+      <input type="text" id="comment-name" required>
+
+      <label for="comment-content">Your Comment:</label>
+      <textarea id="comment-content" required></textarea>
+
+      <button type="submit" class="button">Submit Comment</button>
+    </form>
+
+    <div class="comment-section">
+      <!-- Comments from other users will be dynamically added here -->
+      <!-- Example comment structure (to be populated dynamically) -->
+      <!--
+      <div class="comment">
+        <strong>Commenter Name:</strong>
+        <p>Comment content goes here.</p>
+      </div>
+      -->
+    </div>
+  </div>
+</body>
+
+</html>

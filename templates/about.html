@@ -5,43 +5,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Isha l'Isha Haifa Feminist Center</title>
-  <link rel="stylesheet" href="styles.css"> 
-  <style>
-    /* Add your custom CSS styles here to create a cool and modern design */
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f8f8f8;
-    }
-
-    header {
-      background-color: #3f51b5;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 4px;
-    }
-
-    h1 {
-      color: #3f51b5;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-    }
-
-    /* Add more custom styles as needed */
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+/* styles.css */
 
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+/* Header Styles */
+header {
+  background-color: #6a1b9a;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Main Container Styles */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+/* Headings Styles */
+h1, h2 {
+  color: #6a1b9a;
+}
+
+/* Paragraph Styles */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Bubble Styles */
+.bubble {
+  display: inline-block;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #6a1b9a;
+  color: #fff;
+}
+
+/* Font Styles */
+h1, h2, p, .donate-btn {
+  font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+}
+.donate-btn {
+  background-color: #993399; /* Updated color to a more inviting shade of purple */
+  color: #fff;
+  padding: 16px 28px; /* Increased padding for a more prominent button */
+  border: none;
+  border-radius: 50px; /* Rounded button */
+  font-size: 20px; /* Larger font size for better readability */
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.donate-btn:hover {
+  background-color: #8B008B; /* Darker shade on hover for more interactivity */
+  transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+</style>
 <body>
   <header>
     <h1>Isha l'Isha Haifa Feminist Center</h1>
@@ -49,37 +85,38 @@
 
   <div class="container">
     <h2>About Us</h2>
-    <p>
-      "Isha l'Isha Haifa Feminist Center" is a vibrant community of women dedicated to promoting gender equality and empowering
-      women from all walks of life. Founded in 1983 by passionate feminist activists in Haifa, our center has been a leading voice
-      in the struggle for women's rights in Israel for decades.
-    </p>
-    <p>
-      Our mission is to advance the status and rights of women and girls, fostering peace, security, and socio-economic justice
-      from a feminist perspective. We believe in eradicating all forms of discrimination, violence, and oppression against women.
-    </p>
-    <p>
-      At "Isha l'Isha," we work tirelessly to protect women's rights to make decisions about their bodies, and we actively engage
-      in creating an environment of understanding, dialogue, and commonality among women from diverse cultures and backgrounds.
-    </p>
+    <div class="bubble">
+      <p>Isha l'Isha is a feminist community in Haifa, Israel. Founded in 1983, our mission is to advance women's rights
+        and promote peace, security, and socio-economic justice.</p>
+    </div>
 
-    <h2>Our Vision</h2>
-    <p>
-      We envision a society where all women enjoy equal rights in all fields. A society free from gender-based violence, where
-      women's voices are heard and respected. We strive to create a society in which women have full and equal access to all
-      opportunities and resources.
-    </p>
+    <div class="bubble">
+      <p>Our Goals:</p>
+      <ul>
+        <li>Eradicate discrimination, violence, and oppression against women.</li>
+        <li>Protect women's rights to make decisions about their bodies.</li>
+        <li>Create understanding and dialogue among women of different cultures and backgrounds.</li>
+        <li>Improve services to meet the specific needs of women.</li>
+        <li>Raise awareness about issues of equality and take action against sexism in society.</li>
+      </ul>
+    </div>
 
-    <h2>Our Goals</h2>
-    <ul>
-      <li>To eradicate every form of discrimination, violence, and oppression against women.</li>
-      <li>To protect our rights to make decisions about our bodies.</li>
-      <li>To create the conditions for understanding, commonality, and dialogue between women of different cultures and backgrounds.</li>
-      <li>To improve existing services and adapt them to the specific needs of women.</li>
-      <li>Social change by raising awareness of issues of equality.</li>
-      <li>To take action against any sexist expression in society and to spread the idea of equal rights and opportunities for all women.</li>
-    </ul>
+    <div class="bubble">
+      <p>Our Vision:</p>
+      <p>A society where all women enjoy equal rights in all fields, free from gender-based violence, and their voices
+        are heard.</p>
+    </div>
+
+    <div class="bubble">
+      <p>Join us in our mission to empower women and promote gender equality.</p>
+    </div>
+
+    <button class="donate-btn">Donate Now</button>
   </div>
+
+  <footer>
+    <p>&copy; 2023 Isha l'Isha Haifa Feminist Center. All rights reserved.</p>
+  </footer>
 </body>
 
 </html>
