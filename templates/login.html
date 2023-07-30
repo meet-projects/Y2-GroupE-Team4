@@ -4,14 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Share Your Story | Isha l'Isha Haifa Feminist Center</title>
-  <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">-->
+  <title>Sign in | Isha l'Isha Haifa Feminist Center</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
   <style>
-
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      background-color: green;
+      background-color: #f8f8f8;
     }
 
     header {
@@ -95,47 +96,39 @@
       margin-bottom: 10px;
     }
   </style>
-</head>
+  <form method="post" action="/signup">
+        <!-- Heading -->
+        <h4>
+            Create an account
+        </h4>
 
-<body>
-  <header>
-    <h1>Isha l'Isha Haifa Feminist Center</h1>
-  </header>
+        <!-- Subheading -->
+        <p >
+            Please fill up your information below to sign up.
+        </p>
 
-  <div class="container">
-    <h2>Share Your Story</h2>
-    <form class="story-form">
-      <label for="story-title">Story Title:</label>
-      <input type="text" id="story-title" required>
+        <!-- Email -->
+        <div>
+            <label>Email address*</label>
+            <div>
+                <input type="email"  name="email" id="emailStr" required>
+            </div>
+        </div>
 
-      <label for="story-content">Your Story:</label>
-      <textarea id="story-content" required></textarea>
+        <!-- Password -->
+        <div>
+            <label>Password*</label>
+            <div class="input-group">
+                <input type="password"  name="password" minlength="6">
+            </div>
+        </div>
+        <!-- Fullname -->
 
-      <button type="submit" class="button">Submit Story</button>
+        <label>Username</label><br>
+        <input type="text" name="username" placeholder="Username">
+        <div>
+            <input type="submit"/>
+        </div>
     </form>
-
-    <h2>Comment on Stories</h2>
-    <form class="comment-form">
-      <label for="comment-name">Your Name:</label>
-      <input type="text" id="comment-name" required>
-
-      <label for="comment-content">Your Comment:</label>
-      <textarea id="comment-content" required></textarea>
-
-      <button type="submit" class="button">Submit Comment</button>
-    </form>
-
-    <div class="comment-section">
-      <!-- Comments from other users will be dynamically added here -->
-      <!-- Example comment structure (to be populated dynamically) -->
-      <!--
-      <div class="comment">
-        <strong>Commenter Name:</strong>
-        <p>Comment content goes here.</p>
-      </div>
-      -->
-    </div>
-  </div>
 </body>
-
 </html>
