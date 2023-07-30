@@ -5,20 +5,130 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign in | Isha l'Isha Haifa Feminist Center</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-  <form class="signup-form" method="POST" action="/signup">
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="name" placeholder="Enter your name" required>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f8f8f8;
+    }
 
-      <label for="email">Email:</label>
-      <input type="text" name="email" id="email" placeholder="Enter your email" required>
+    header {
+      background-color: #6a1b9a;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
 
-      <label for="password">Password:</label>
-      <input type="text" name="password" placeholder="password" required>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+    }
 
-      <button type="submit" class="donate-btn">Donate Now</button>
+    h1 {
+      color: #6a1b9a;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    .story-form {
+      margin-bottom: 20px;
+    }
+
+    .story-form label,
+    .story-form textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .story-form textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .comment-form {
+      margin-bottom: 20px;
+    }
+
+    .comment-form label,
+    .comment-form textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .comment-form textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .button {
+      background-color: #6a1b9a;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #4a148c;
+    }
+
+    .comment-section {
+      margin-top: 40px;
+    }
+
+    .comment {
+      background-color: #f8f8f8;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+  </style>
+  <form method="post" action="/signup">
+        <!-- Heading -->
+        <h4>
+            Create an account
+        </h4>
+
+        <!-- Subheading -->
+        <p >
+            Please fill up your information below to sign up.
+        </p>
+
+        <!-- Email -->
+        <div>
+            <label>Email address*</label>
+            <div>
+                <input type="email"  name="email" id="emailStr" required>
+            </div>
+        </div>
+
+        <!-- Password -->
+        <div>
+            <label>Password*</label>
+            <div class="input-group">
+                <input type="password"  name="password" minlength="6">
+            </div>
+        </div>
+        <!-- Fullname -->
+
+        <label>Username</label><br>
+        <input type="text" name="username" placeholder="Username">
+        <div>
+            <input type="submit"/>
+        </div>
     </form>
 </body>
 </html>
