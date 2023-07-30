@@ -43,12 +43,16 @@ def about():
 def donate():
     if request.method == 'POST':
         try:
+            #need to add name attributes for each one & a donation display (in html) 
             email = request.form['email'].lower()
             name = request.form['name']
             amount = request.form['amount']
-            donation = {"email": email, "name": name, "amount": amount}
+            msg = request.form['msg']
+            display = request.form['display']
+            donation = {"email": email, "name": name, "amount": amount, "msg": msg, "display": display}
             db.child("Donations").push(donation)
-            return render_template("donate.html")
+            donations = db.child("Donations").get().val()
+            return render_template("donate.html", donations = donations)
 
         except:
             return render_template("donate.html")
