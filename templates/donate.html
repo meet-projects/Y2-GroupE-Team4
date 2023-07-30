@@ -99,18 +99,18 @@
     <h2>Support Our Cause</h2>
     <form class="donate-form">
       <label for="name">Name:</label>
-      <input type="text" id="name" placeholder="Enter your name" required>
+      <input type="text" name="name" id="name" placeholder="Enter your name" required>
 
       <label for="email">Email:</label>
-      <input type="text" id="email" placeholder="Enter your email" required>
+      <input type="text" name="email" id="email" placeholder="Enter your email" required>
 
       <label for="amount">Donation Amount:</label>
-      <input type="number" id="amount" placeholder="Enter the amount you wish to donate" required>
+      <input type="number" name="amount" id="amount" placeholder="Enter the amount you wish to donate" required>
 
-      <textarea placeholder="Leave a message (optional)"></textarea>
+      <textarea name="msg" placeholder="Leave a message (optional)"></textarea>
 
       <label for="public-donation">Make my donation public:</label>
-      <input type="checkbox" id="public-donation" name="public-donation">
+      <input type="checkbox" name="display" id="public-donation" name="public-donation">
 
       <button type="submit" class="donate-btn">Donate Now</button>
     </form>
