@@ -58,10 +58,47 @@ def donate():
             #return render_template("donate.html")
     else:
         return render_template("donate.html")
+#Route for signing up
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    error=""
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        try:
+            print("trying")
+            login_session['user'] = auth.create_user_with_email_and_password(email,password)
+            UID = login_session['user']['localId']
+            user = {"username":request.form['username'],"bio":request.form['bio']}
+            db.child("Users").child(UID).set(user)
+            print("added")
+            return redirect(url_for('story'))
+        except:
+            error = "signup failed, please try again"
+    return render_template("login.html",n=error)
 
 
+#Route for signing in
+@app.route('/signin', methods=['GET', 'POST'])
+def signin():
+    error=""
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        try:
+            login_session['user'] = auth.sign_in_with_email_and_password(email,password)
+            return redirect(url_for('story'))
+        except:
+            error = "sign in failed, please try again"
+    return render_template("login.html",m=error)
+#Route for moving to the login page (not the actual signing in)
+@app.route('/login')
+def login():
+    return render_template("login.html")
 
-
+@app.route('/story')
+def story():
+    return render_template("story.html")
 
 
 
