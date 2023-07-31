@@ -28,14 +28,7 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 
 
 
-@app.route('/')
-def home():
-    return render_template("index.html")
 
-
-@app.route('/about')
-def about():
-    return render_template("about.html")
 
 
 
@@ -91,7 +84,7 @@ def signin():
         except:
             error = "sign in failed, please try again"
     return render_template("login.html",m=error)
-    
+
 #Route for moving to the login page (not the actual signing in)
 @app.route('/login')
 def login():
@@ -102,9 +95,17 @@ def story():
     return render_template("story.html")
 
 
+@app.route('/about')
+def about():
+    return render_template("about.html")
 
+@app.route('/contact')
+def contact():
+    return render_template("contact.html")
 
-
+@app.route('/')
+def home():
+    return render_template("index.html")
 
 
 
