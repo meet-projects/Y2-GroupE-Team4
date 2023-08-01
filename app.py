@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask import session as login_session
 import pyrebase
+import random
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = 'super-secret-key'
@@ -109,10 +110,15 @@ def home():
     donations = db.child("Donations").get().val()
     if request.method == 'POST':
         try:
+            projects = ["Community building project", "Women without status", "women and disabilities", "The Gun on the kitchen table", "Research center", "Young women project"]
             email = request.form['email'].lower()
             name = request.form['name']
             amount = request.form['amount']
-            donation = {"email": email, "name": name, "amount": amount}
+            #pro_ind = random.random(0, 5)
+            #project = projects[pro_ind]
+            project = random.choice(projects)
+            print(project)
+            donation = {"email": email, "name": name, "amount": amount, "project": project}
             print(donation)
             db.child("Donations").push(donation)
             print('supossedly added donation?')
