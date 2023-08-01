@@ -122,7 +122,7 @@ def home():
             db.child("Donations").push(donation)
             print('supossedly added donation?')
             donations = db.child("Donations").get().val()
-            return render_template("donations.html",donations = donations)
+            return redirect(url_for('donations'))
         except Exception as e:
             print(e)        
     return render_template("index2.html",donations = donations)

@@ -52,12 +52,13 @@ body {
   font-stretch: 100%;
   font-style: normal;
   font-size: 50px;
-  color: black;
+  color: ghostwhite;
   line-height: 20px;
   /* text-align: right; */
   float: right;
   margin-right: 10px;
   margin-left: 20px;
+  text-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
 
@@ -82,14 +83,13 @@ body {
 }
 
 .title_box {
-  background: #fff;
+  background: transparent;
   width: 850px;
   height: 85px;
   padding: 30px;
   margin-right: 500px;
   margin-left: 500px;
   border-radius: 10px; 
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
   align-self: center;
 }
 
