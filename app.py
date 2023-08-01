@@ -114,8 +114,7 @@ def home():
             email = request.form['email'].lower()
             name = request.form['name']
             amount = request.form['amount']
-            #pro_ind = random.random(0, 5)
-            #project = projects[pro_ind]
+
             project = random.choice(projects)
             print(project)
             donation = {"email": email, "name": name, "amount": amount, "project": project}
@@ -123,13 +122,17 @@ def home():
             db.child("Donations").push(donation)
             print('supossedly added donation?')
             donations = db.child("Donations").get().val()
-            return render_template("index2.html",donations = donations)
+            return render_template("donations.html",donations = donations)
         except Exception as e:
             print(e)        
     return render_template("index2.html",donations = donations)
     
 
 
+@app.route('/donations')
+def donations():
+    donations = db.child("Donations").get().val()
+    return render_template("donations.html", donations = donations)
 
 
 
