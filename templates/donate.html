@@ -145,11 +145,11 @@
   </div>
   <div class="posts">
     <h1>Donors</h1>
-    {%for donor in donations%}
-      {%if donations[donor]["display"]=="on"%}
-        <br><br><div>{{donations[donor]["name"]}} has donated {{donations[donor]["amount"]}}
-          {%endif%}
-    {%endfor%}
+    {% for donor in donations %}
+      {% if donations[donor]["display"]=="on" %}
+        <br><br><div>{{ donations[donor]["name"] }} has donated {{ donations[donor]["amount"] }}
+          {% endif %}
+    {% endfor %}
     
   </div>
   <footer>
