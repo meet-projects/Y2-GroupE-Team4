@@ -32,28 +32,26 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 
 
 
-@app.route('/donate', methods=['GET', 'POST'])
-def donate():
-    error = ""
-    donations = db.child("Donations").get().val()
-    if request.method == 'POST':
-        try:
-            #need to add name attributes for each one & a donation display (in html) 
-            email = request.form['email'].lower()
-            name = request.form['name']
-            amount = request.form['amount']
-            msg = request.form['msg']
-            display = request.form['display']
-            donation = {"email": email, "name": name, "amount": amount, "msg": msg, "display": display}
-            db.child("Donations").push(donation)
-            donations = db.child("Donations").get().val()
-            return render_template("donate.html", donations = donations)
+# @app.route('/donate', methods=['GET', 'POST'])
+# def donate():
+#     error = ""
+#     donations = db.child("Donations").get().val()
+#     if request.method == 'POST':
+#         #try:
+#             #need to add name attributes for each one & a donation display (in html) 
+#         email = request.form['email'].lower()
+#         name = request.form['name']
+#         amount = request.form['amount']
+#         donation = {"email": email, "name": name, "amount": amount}
+#         db.child("Donations").push(donation)
+#         donations = db.child("Donations").get().val()
+#         return render_template("donate.html", donations = donations)
 
-        except:
-            error = "couldn't place donation, try again please"
-            return render_template("donate.html", donations=donations, e=error)
-    else:
-        return render_template("donate.html",donations = donations)
+#        # except:
+#             #error = "couldn't place donation, try again please"
+#             #return render_template("donate.html", donations=donations, e=error)
+#     else:
+#         return render_template("donate.html",donations = donations)
 #Route for signing up
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -106,10 +104,24 @@ def about():
 def contact():
     return render_template("contact.html")
 
-@app.route('/')
+@app.route('/', methods=["GET","POST"])
 def home():
-    return render_template("index2.html")
-
+    donations = db.child("Donations").get().val()
+    if request.method == 'POST':
+        try:
+            email = request.form['email'].lower()
+            name = request.form['name']
+            amount = request.form['amount']
+            donation = {"email": email, "name": name, "amount": amount}
+            print(donation)
+            db.child("Donations").push(donation)
+            print('supossedly added donation?')
+            donations = db.child("Donations").get().val()
+            return render_template("index2.html",donations = donations)
+        except Exception as e:
+            print(e)        
+    return render_template("index2.html",donations = donations)
+    
 
 
 
