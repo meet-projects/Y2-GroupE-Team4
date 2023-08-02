@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/static/donations.css">
+	<script src="main.js"></script>
+	<title> My favorite albums </title>
+</head>
+
+
+
+<body>
+	<!-- <h1> just checking </h1>
+	{% for donation in donations %}
+		{% if donations[donation]["project"] == "Women without status" %}
+			
+			<div class = "image_box"> <img src = "https://isha.org.il/wp-content/uploads/2021/03/3.health.jpg" width="300" height="300" > 
+			<h1> working </h1>
+		{% endif %}
+    	<div>{{ donations[donation]["name"] }} has donated {{ donations[donation]["amount"] }} for the {{ donations[donation]["project"] }} <div>
+ 
+    {% endfor %} -->
+
+
+    <div class="container">
+
+           <div class="navbar">
+                    
+                    
+                  <!-- <p class = "nav_item" > </p>
+                    <a href="/profile" class = "nav_item">Profile</a>
+                    <a href="/login" class = "nav_item">Login</a>
+                    <a href="/" class = "nav_item">Home</a>
+                     <a href="/reviews" class = "nav_item">Reviews</a>
+                     <a href="/add_review" class = "nav_item"> Add a Review</a>
+                    <a href="/logout"  id = "logout" >Logout</a> -->
+            </div>
+
+            <center>
+          <div class="title">
+            <div class = "title_box">
+              <h2 class = "dsc">here are some of our supporters: </h2>
+            </div>
+          </div>
+        </center>
+
+         <!-- projects = {"Community building project":"https://imageio.forbes.com/specials-images/imageserve/5e32d461a854780006aff49c/0x0.jpg?format=jpg&width=1200", "Women without status":"https://isha.org.il/wp-content/uploads/2021/03/3.health.jpg", "women and disabilities":"https://www.unwomen.org/sites/default/files/Headquarters/Images/Sections/What%20We%20Do/Women-and-girls-with-disabilities/What-we-do-Women-and-girls-with-disabilities-Palestine_OW7A9231_1_675x350.jpg", "The Gun on the kitchen table":"https://media.glamour.com/photos/5696724b16d0dc3747f05469/master/w_1600%2Cc_limit/inspired-2014-05-guncontrolwomen-main.jpg", "Research center":"https://www.inquirer.com/resizer/3jtf98SKjTzmvly-GKmJNj-209I=/4x0:5760x3840/760x507/filters:format(webp)/cloudfront-us-east-1.images.arcpublishing.com/pmn/OX4DUDR7ZJFMPDHB2DRCL3ZCQM.jpg", "Young women project":"https://img.freepik.com/free-photo/two-young-women-working-together-office_93675-134481.jpg"} -->
+           
+          <div class="reviews" style = "margin-left:25px; margin-right:25px; margin-top: 100px">
+                {% for donation in donations %}
+                	
+                    <div class = "review_box" style = "float:left; margin-left:20px; margin-top:20px">
+
+                    {% if donations[donation]["project"]=="Community building project" %}	
+                   		 <div class = "image_box"> <img src = "https://imageio.forbes.com/specials-images/imageserve/5e32d461a854780006aff49c/0x0.jpg?format=jpg&width=1200" width="300" height="300" > </div>
+
+                    {% elif donations[donation]["project"]=="Women without status"%}
+                    	<div class = "image_box"> <img src = "https://isha.org.il/wp-content/uploads/2021/03/3.health.jpg" width="300" height="300" > </div>
+
+                    {% elif donations[donation]["project"]=="women and disabilities"%}
+                    	<div class = "image_box"> <img src = "https://www.unwomen.org/sites/default/files/Headquarters/Images/Sections/What%20We%20Do/Women-and-girls-with-disabilities/What-we-do-Women-and-girls-with-disabilities-Palestine_OW7A9231_1_675x350.jpg" width="300" height="300" > </div>
+
+                    {% elif donations[donation]["project"]=="The Gun on the kitchen table"%}
+                    	<div class = "image_box"> <img src = "https://media.glamour.com/photos/5696724b16d0dc3747f05469/master/w_1600%2Cc_limit/inspired-2014-05-guncontrolwomen-main.jpg" width="300" height="300" > </div>
+
+                    {% elif donations[donation]["project"]=="Research center"%}
+                    	<div class = "image_box"> <img src = "https://www.inquirer.com/resizer/3jtf98SKjTzmvly-GKmJNj-209I=/4x0:5760x3840/760x507/filters:format(webp)/cloudfront-us-east-1.images.arcpublishing.com/pmn/OX4DUDR7ZJFMPDHB2DRCL3ZCQM.jpg" width="300" height="300" > </div>
+                    {% else %}
+                    	<div class = "image_box"> <img src = "https://img.freepik.com/free-photo/two-young-women-working-together-office_93675-134481.jpg" width="300" height="300" > </div>
+
+                   {% endif %}
+
+
+
+                    <h2 class = "amount"> {{donations[donation]["amount"]}}$ </h2>
+                   
+                    <h3 class = "project"> donated to the: <br>  {{donations[donation]["project"]}} </h3>
+                    <p class = "donor"> donated by: {{donations[donation]["name"]}} </p>
+                    
+
+                    </div>
+
+                {% endfor %}
+          </div>
+        
+
+</div>
+	
+
+
+
+</body>
+
+
+
+</html>

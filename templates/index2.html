@@ -11209,36 +11209,29 @@ html {
                 <!-- Contact Section Form-->
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <form method="POST" action="/" id="contactForm">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." data-sb-validations="required" required />
                                 <label for="name">Full name</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <input class="form-control" id="email" name = "email"  type="email" placeholder="name@example.com" data-sb-validations="required,email" required />
                                 <label for="email">Email address</label>
                                 <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                             </div>
                             <!-- Phone number input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" required />
                                 <label for="phone">Phone number</label>
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your amount here..." style="height: 7rem" data-sb-validations="required"></textarea>
+                                <textarea class="form-control" id="message" name= "amount" type="text" placeholder="Enter your amount here..." style="height: 7rem" data-sb-validations="required" required></textarea>
                                 <label for="message">Amount</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">An amount is required.</div>
                             </div>
@@ -11260,7 +11253,16 @@ html {
                             <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Donate</button>
+                            <input class="btn btn-primary btn-xl" id="submitButton" type="submit"></input>
+                            <div class="posts">
+<!--                             <h1>Donors</h1>
+                            {% for donor in donations %}
+                            {% if donations[donor]["display"] =="on" %}
+                           <br><br><div>{{ donations[donor]["name"] }} has donated {{ donations[donor]["amount"] }}
+                              {% endif %}
+                             {% endfor %}
+                                        
+                                      </div> -->
                         </form>
                     </div>
                 </div>
